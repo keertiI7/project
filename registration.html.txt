@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 450px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+        #success {
+            display: none;
+            color: green;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Course Registration Form</h2>
+
+    <form id="regForm" onsubmit="showSuccess(event)">
+
+        <label>Full Name:</label>
+        <input type="text" required>
+
+        <label>Email:</label>
+        <input type="email" required>
+
+        <label>Phone Number:</label>
+        <input type="text" required>
+
+        <label>Age:</label>
+        <input type="number" min="1" required>
+
+        <label>Gender:</label>
+        <select required>
+            <option value="" disabled selected>Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Address:</label>
+        <textarea required></textarea>
+
+        <label>Choose Course:</label>
+        <select required>
+            <option value="" disabled selected>Select Course</option>
+            <option>Full Stack Development</option>
+            <option>Cyber Security</option>
+            <option>AWS Cloud</option>
+            <option>Data Science</option>
+            <option>DevOps</option>
+            <option>AI & Machine Learning</option>
+        </select>
+
+        <label>Additional Notes:</label>
+        <textarea></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="success">✅ Successfully Submitted!</p>
+</div>
+
+<script>
+    function showSuccess(event) {
+        event.preventDefault();  
+        document.getElementById("success").style.display = "block";
+        document.getElementById("regForm").reset();
+    }
+</script>
+
+</body>
+</html>
